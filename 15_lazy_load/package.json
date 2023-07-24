@@ -1,0 +1,17 @@
+{
+  "name": "15_lazy_load",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "Gildemberg Leite <contato@gildembergleite.com.br> (https://www.gildembergleite.com.br/)",
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}

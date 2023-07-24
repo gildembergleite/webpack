@@ -1,0 +1,25 @@
+{
+  "name": "4_modes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve --config webpack.development.config.js",
+    "prod": "webpack --config webpack.produciton.config.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "devDependencies": {
+    "@gildembergleite/eslint-config": "^1.2.0",
+    "eslint": "^8.44.0",
+    "html-webpack-plugin": "^5.5.3",
+    "nodemon": "^2.0.22",
+    "terser-webpack-plugin": "^5.3.9",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

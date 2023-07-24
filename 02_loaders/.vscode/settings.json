@@ -1,0 +1,7 @@
+{
+  "CodeGPT.query.language": "English",
+  "CodeGPT.maxTokens": 800,
+  "CodeGPT.organizationId": "",
+  "CodeGPT.temperature": 0.3,
+  "CodeGPT.apiKey": "OpenAI"
+}

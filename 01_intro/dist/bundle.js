@@ -1,0 +1,1 @@
+(()=>{"use strict";var o;o=prompt("Enter your name:"),console.log(`Hello, ${o}`)})();

@@ -1,0 +1,16 @@
+{
+  "name": "1_intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon --exec webpack --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  }
+}

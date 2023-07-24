@@ -1,0 +1,20 @@
+$bgColor: #349;
+$color: #fff;
+$upper: uppercase;
+$border: 1px solid #456;
+$borderR: 5px;
+$textBase: 1em;
+
+body {
+  .btn {
+    background-color: $bgColor;
+    color: $color;
+    text-transform: $upper;
+    border: $border;
+    border-radius: $borderR;
+    font-size: $textBase;
+    padding: 8px 16px;
+    margin-top: 16px;
+    cursor: pointer;
+  }
+}

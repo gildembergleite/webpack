@@ -1,0 +1,27 @@
+{
+  "name": "3_plugins",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^1.2.0",
+    "css-loader": "^6.8.1",
+    "dotenv-webpack": "^8.0.1",
+    "eslint": "^8.44.0",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "nodemon": "^2.0.22",
+    "style-loader": "^3.3.3",
+    "terser-webpack-plugin": "^5.3.9"
+  }
+}
