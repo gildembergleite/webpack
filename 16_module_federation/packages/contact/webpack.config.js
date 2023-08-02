@@ -8,7 +8,7 @@ module.exports = {
       static: {
          directory: path.join(__dirname, './dist'),
       },
-      port: 9002,
+      port: 9003,
       historyApiFallback: true,
       open: true,
       hot: true,
@@ -17,7 +17,7 @@ module.exports = {
    output: {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'dist'),
-      publicPath: 'http://localhost:9002',
+      publicPath: 'http://localhost:9003',
    },
    plugins: [
       new HtmlWebpackPlugin({

@@ -1,16 +1,16 @@
 {
-  "name": "home",
+  "name": "contact",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "Gildemberg Leite <contato@gildembergleite.com.br> (https://www.gildembergleite.com.br/)",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "@babel/core": "^7.22.9",
     "@babel/preset-react": "^7.22.5",
     "@gildembergleite/eslint-config": "^1.2.0",
