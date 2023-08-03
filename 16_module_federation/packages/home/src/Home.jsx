@@ -3,7 +3,7 @@ import './home.css'
 
 export default function Home() {
    return (
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white dark:bg-gray-900 flex flex-col justify-center items-center min-h-[calc(100vh-96px)]">
          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
             <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
                <a

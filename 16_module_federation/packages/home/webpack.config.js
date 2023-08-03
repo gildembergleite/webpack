@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { ModuleFederationPlugin } = require('webpack').container
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 const path = require('path')
 
 module.exports = {
@@ -15,11 +15,6 @@ module.exports = {
       hot: true,
       compress: true,
    },
-   output: {
-      filename: 'bundle.js',
-      path: path.resolve(__dirname, 'dist'),
-      publicPath: 'http://localhost:9002',
-   },
    plugins: [
       new HtmlWebpackPlugin({
          template: path.resolve(__dirname, './public/index.html'),
@@ -28,7 +23,19 @@ module.exports = {
          name: 'HomeApp',
          filename: 'remoteEntry.js',
          exposes: {
-            './HomePage': './src/Home',
+            './Home': './src/Home',
+         },
+         shared: {
+            react: {
+               singleton: true,
+               eager: true,
+               requiredVersion: false,
+            },
+            'react-dom': {
+               singleton: true,
+               eager: true,
+               requiredVersion: false,
+            },
          },
       }),
    ],
@@ -37,9 +44,9 @@ module.exports = {
          {
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
-            loader: require.resolve('babel-loader'),
+            loader: 'babel-loader',
             options: {
-               presets: [require.resolve('@babel/preset-react')],
+               presets: ['@babel/preset-env', '@babel/preset-react'],
             },
          },
          {
@@ -51,4 +58,5 @@ module.exports = {
    resolve: {
       extensions: ['.js', '.jsx', '.json'],
    },
+   target: 'web',
 }

@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { ModuleFederationPlugin } = require('webpack').container
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 const path = require('path')
 
 module.exports = {
@@ -15,11 +15,6 @@ module.exports = {
       hot: true,
       compress: true,
    },
-   output: {
-      filename: 'bundle.js',
-      path: path.resolve(__dirname, 'dist'),
-      publicPath: 'http://localhost:9003',
-   },
    plugins: [
       new HtmlWebpackPlugin({
          template: path.resolve(__dirname, './public/index.html'),
@@ -28,7 +23,19 @@ module.exports = {
          name: 'ContactApp',
          filename: 'remoteEntry.js',
          exposes: {
-            './ContactPage': './src/Contact',
+            './Contact': './src/Contact',
+         },
+         shared: {
+            react: {
+               singleton: true,
+               eager: true,
+               requiredVersion: false,
+            },
+            'react-dom': {
+               singleton: true,
+               eager: true,
+               requiredVersion: false,
+            },
          },
       }),
    ],
@@ -51,4 +58,5 @@ module.exports = {
    resolve: {
       extensions: ['.js', '.jsx', '.json'],
    },
+   target: 'web',
 }
