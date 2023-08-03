@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { ModuleFederationPlugin } = require('webpack').container
 const path = require('path')
 
 module.exports = {
@@ -22,6 +23,13 @@ module.exports = {
    plugins: [
       new HtmlWebpackPlugin({
          template: path.resolve(__dirname, './public/index.html'),
+      }),
+      new ModuleFederationPlugin({
+         name: 'App',
+         remotes: {
+            HomeApp: 'HomeApp@http://localhost:9002/remoteEntry.js',
+            ContactApp: 'ContactApp@http://localhost:9003/remoteEntry.js',
+         },
       }),
    ],
    module: {
