@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Link, BrowserRouter, Route, Routes } from 'react-router-dom'
 import './app.css'
 
@@ -10,7 +10,7 @@ export default function App() {
 
    return (
       <BrowserRouter basename="/">
-         <nav className="bg-white dark:bg-gray-900 flex border-gray-200 dark:border-gray-600 px-8 h-24">
+         <nav className="bg-gray-900 flex border-gray-600 px-8 h-24">
             <div className="flex w-full justify-between items-center">
                <div className="flex">
                   <Link to="/" className="flex items-center gap-4">
@@ -33,7 +33,7 @@ export default function App() {
                            d="m123.363 214.847l-62.02-34.15v-67.574l62.02 35.792v65.932Zm8.888 0l62.02-34.101v-67.623l-62.02 35.792v65.932ZM65.497 105.298l62.31-34.246l62.26 34.246l-62.26 35.937l-62.31-35.937Z"
                         />
                      </svg>
-                     <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                     <span className="hidden sm:flex self-center text-2xl font-semibold whitespace-nowrap text-white">
                         Module Federation
                      </span>
                   </Link>
@@ -60,12 +60,13 @@ export default function App() {
                </div>
             </div>
          </nav>
-         <React.Suspense>
+
+         <Suspense fallback={<div>Loading...</div>}>
             <Routes>
                <Route exact path="/" element={<Home />} />
                <Route path="/contact" element={<Contact />} />
             </Routes>
-         </React.Suspense>
+         </Suspense>
       </BrowserRouter>
    )
 }
